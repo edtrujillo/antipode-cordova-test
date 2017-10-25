@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.edmundtrujillo.plugin.antipode" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>antipode</name>
+  <description>A Cordova Plugin for retrieving the antipode of your current location.</description>
+  <author>Edmund Trujillo</author>
+  <keywords>location, antipode</keywords>
+  <info>
+      Simple plugin to retrieve the antipode of your current location on the earth.
+      Assumes that location services is enabled in the app
+  </info>
+    <js-module name="antipode" src="www/antipode.js">
+        <clobbers target="antipode" />
+    </js-module>
+    
+    <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="antipode">
+        <param name="ios-package" value="antipode" />
+      </feature>
+    </config-file>
+    <source-file src="src/ios/antipode.m" />
+    <framework src="CoreLocation.framework" />
+  </platform>
+    
+    
+</plugin>
